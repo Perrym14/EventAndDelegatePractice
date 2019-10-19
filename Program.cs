@@ -6,7 +6,14 @@ namespace EventAndDelegatePractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var server = new FoodServer();
+            var foodRetrievalService = new FoodRetrievalService();
+            var servingFoodService = new ServingFoodService();
+
+            server.FoodReady += foodRetrievalService.OnFoodReady;
+            server.FoodReady += servingFoodService.OnFoodReady;
+
+            server.Serve();
         }
     }
 }
