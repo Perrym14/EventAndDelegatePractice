@@ -10,8 +10,8 @@ namespace EventAndDelegatePractice
             var foodRetrievalService = new FoodRetrievalService();
             var servingFoodService = new ServingFoodService();
 
-            server.FoodReady += foodRetrievalService.OnFoodReady;
-            server.FoodReady += servingFoodService.OnFoodReady;
+            server.FoodReady += foodRetrievalService.OnFoodReadyToBeServed;
+            server.FoodReady += servingFoodService.OnFoodReadyToBeServed;
 
             server.Serve();
         }

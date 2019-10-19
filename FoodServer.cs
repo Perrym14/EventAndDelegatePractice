@@ -19,10 +19,10 @@ namespace EventAndDelegatePractice
             Console.WriteLine("Waiting for orders...");
             Thread.Sleep(3000);
 
-            OnFoodReady();
+            OnFoodReadyToBeServed();
         }
 
-        protected virtual void OnFoodReady()
+        protected virtual void OnFoodReadyToBeServed()
         {
             FoodReady?.Invoke(this, EventArgs.Empty);
         }
